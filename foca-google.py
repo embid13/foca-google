@@ -7,7 +7,7 @@ import re
 from selenium import webdriver
 
 
-FIND_AND_DOWNLOAD = [
+EXTENSIONS = [
     'pdf',
     'doc',
     'docx',
@@ -35,11 +35,6 @@ FIND_AND_DOWNLOAD = [
     '7z',
     'zipx'
 ];
-
-FIND_URLS_ONLY = [
-    'git',
-    'svn'
-]
 
 
 def make_search_query(domain, extensions):
@@ -107,6 +102,13 @@ def download_files(results, domain, filename):
     print('\n\n\nSuccessfully downloaded {0} files into {1} folder\n\n\n'.format(len(results), domain))
 
 
+def init_csv_search():
+    print ('\nSearching public repositories on {0}...'.format(domain))
+    query = make_search_query(domain, ['git', 'svn'])
+    repositories = parse_google_serp(query)
+    save_log_file(repositories, domain, '0_repositories.txt')
+
+
 if len(sys.argv) == 1:
     print("""
     Format:
@@ -123,18 +125,17 @@ else:
 
     if len(sys.argv) == 3:
         extension = sys.argv[2]
-        query = make_search_query(domain, [extension])
+        if extension == '--cvs':
+            init_csv_search()
+            sys.exit()
+        else:
+            query = make_search_query(domain, [extension])
     else:
-        query = make_search_query(domain, FIND_AND_DOWNLOAD)
+        query = make_search_query(domain, EXTENSIONS)
 
     os.system('mkdir ./{0}'.format(domain))
 
     print('\nSearching {0} files on {1}'.format('all static' if not extension else extension.upper(), domain))
     results = parse_google_serp(query)
     save_log_file(results, domain, '0_log.txt')
-
-    print ('\nSearching public repositories on {0}...'.format(domain))
-    repositories = parse_google_serp(make_search_query(domain, FIND_URLS_ONLY))
-    save_log_file(repositories, domain, '0_repositories.txt')
-
     download_files(results, domain, '0_log.txt')

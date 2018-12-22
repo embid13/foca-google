@@ -1,7 +1,7 @@
 # foca-google
-`foca-google` searches and downloads documents from a specified domain using Google (e.g. PDFs, DOCs, XLS', RTFs, RARs etc — full list of extensions is listed on [lines 11-36](foca-google.py#L11)). It also searches for public `.git` and `.svn` folders on the domain (without downloading).
+`foca-google` searches and downloads documents from a specified domain using Google (e.g. PDFs, DOCs, XLS', RTFs, RARs etc — full list of extensions is listed on [lines 11-36](foca-google.py#L11)).
 
-This is an alternative to the original [FOCA](https://github.com/ElevenPaths/FOCA) since Google Search doesn't work there sometimes.
+This is a partial alternative to the original [FOCA](https://github.com/ElevenPaths/FOCA) since Google Search doesn't work there sometimes.
 
 ### Example
 If you want to find documents on `example.com`, run:
@@ -15,7 +15,6 @@ It will
 1. Create a folder `example.com`
 2. Download all found documents (PDFs, DOCs, XLS' etc) into `example.com` folder
 3. Save URLs of all found documents into `example.com/0_log.txt`
-4. Save URLs of all found Git/SVN repositories into `example.com/0_repositories.txt`
 
 Alternatively, run:
 
