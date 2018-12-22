@@ -57,7 +57,7 @@ def parse_google_serp(query):
 
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_experimental_option('detach', True)
-    chrome_options.add_argument('user-data-dir=$HOME/Library/Application Support/Google/Chrome')
+    chrome_options.add_argument('user-data-dir={0}/Library/Application Support/Google/Chrome'.format(os.path.expanduser('~')))
     browser = webdriver.Chrome(options=chrome_options)
 
     browser.get(primary_url)
@@ -104,7 +104,6 @@ def save_log_file(results, domain, filename):
 def download_files(results, domain, filename):
     print('\n\n\nDownloading {0} files from {1}/{2} into {1} folder...\n\n\n'.format(len(results), domain, filename))
     os.system('wget -i ./{0}/{1} -P ./{0}'.format(domain, filename))
-    time.sleep(3)
     print('\n\n\nSuccessfully downloaded {0} files into {1} folder\n\n\n'.format(len(results), domain))
 
 

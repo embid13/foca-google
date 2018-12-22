@@ -36,6 +36,6 @@ You must have `wget`, `pip` and Google Chrome installed.
 6. Your `foca-google` is ready to go
 
 ### Troubleshooting
-1. **Linux users:** on [line 60](foca-google.py#L60), change `user-data-dir` path to yours. You can find it at `chrome://version` => Profile Path (but remove "/Default" at the end of the path)
+1. **Linux users:** on [line 60](foca-google.py#L60), change `user-data-dir` path to yours (where `{0}` is your user's home directory). You can find it at `chrome://version` => Profile Path (but remove "/Default" at the end of the path)
 2. If the script crashes with the error "Chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.", kill all Chrome entities and run the script again.
 3. Let me know if you see any other errors (create an issue on Github)
