@@ -30,7 +30,7 @@ You must have `wget`, `pip` and Google Chrome installed.
 1. Download [foca-google.py](foca-google.py)
 2. `mv foca-google.py /usr/local/bin/foca-google`
 3. Install Selenium via pip: `sudo -H pip install selenium`
-4. Install Selenium [Chrome Driver](https://sites.google.com/a/chromium.org/chromedriver/downloads)
+4. Install Selenium [Chrome Driver](https://sites.google.com/a/chromium.org/chromedriver/downloads) and also move the binary into `/usr/local/bin/`
 5. Linux users, see **Troubleshooting#1 (below)**
 6. Your `foca-google` is ready to go
 
