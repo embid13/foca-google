@@ -28,7 +28,7 @@ def parse_google_serp(query):
 
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_experimental_option('detach', True)
-    chrome_options.add_argument('user-data-dir=/home/mikel/.config/BraveSoftware/Brave-Browser/Library/Application Support/Google/Chrome')
+    chrome_options.add_argument('user-data-dir=<YOUR-USER-DATA-DIR>/Library/Application Support/Google/Chrome')
     browser = webdriver.Chrome(options=chrome_options)
 
     browser.get(primary_url)
