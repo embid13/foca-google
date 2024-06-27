@@ -5,7 +5,9 @@
 
 This repository is a fork of [Original Repository](https://github.com/egorvinogradov/foca-google) and the original repository was created and maintained by [Original Author](https://github.com/egorvinogradov).
 
-Our fork aims to build upon the excellent work done in the original project by upgrading deprecated resources and improving existing functionality. I have also made some modifications to tailor the project to specific use cases.
+This fork aims to build upon the excellent work done in the original project by upgrading deprecated resources and improving existing functionality. I have also made some modifications to tailor the project to specific use cases.
+
+The main differences are the replacement of deprecated function "find_elements_by_css_selector", among other details.
 
 I encourage you to check out the original repository for more information on the work that this project is built upon.
 
